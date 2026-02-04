@@ -59,7 +59,6 @@ It includes fully automated pipelines that support modern ways of working, valid
   - TMDL format conversion and management
   - Semantic model optimization and testing
 - **Custom BPA Rules** - Enterprise-grade validation rules for semantic models
-- **Automated testing frameworks** - Quality gates for data platform components
 
 ### Authentication & Security
 - **Service Principal authentication** - Secure API access patterns
@@ -206,22 +205,6 @@ FabricOps provides multiple deployment strategies:
 - **Cross-workspace dependency validation**
 - **Performance testing and monitoring**
 - **Data quality assertions**
-
-## Community and Conference Usage
-
-FabricOps is designed as a demonstration platform for:
-
-### Conference Presentations
-- **Complete end-to-end scenarios** for live demonstrations
-- **Reproducible environments** for consistent presentations
-- **Real-world complexity** showing enterprise patterns
-- **Interactive capabilities** for audience engagement
-
-### Training and Education
-- **Best practice examples** for Fabric development
-- **Modern DevOps patterns** adapted for data platforms
-- **Collaborative workflows** for team development
-- **Automation techniques** for operational efficiency
 
 ## Advanced Features
 
