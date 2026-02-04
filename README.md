@@ -180,7 +180,6 @@ FabricOps provides multiple deployment strategies:
 #### Multi-Stage Deployment
 - **Automated progression** through environments
 - **Quality gates** between stages
-- **Rollback capabilities**
 
 #### Single-Stage Deployment
 - **Targeted environment deployment**
@@ -192,19 +191,34 @@ FabricOps provides multiple deployment strategies:
 - **Branch-based deployment decisions**
 - **Advanced release orchestration**
 
-## Validation and Quality Gates
+## Optional: Build Validation and Branch Policies
 
-### BPA Rule Validation
-- **Custom rule definitions** in `BPARules.json`
-- **Automated validation** during pull requests
-- **Severity-based blocking** for quality control
-- **300+ validation rules** covering DAX expressions, model design, and performance
+It is strongly recommended to protect the `main` branch using branch policies.
 
-### Automated Testing
-- **Semantic model refresh testing**
-- **Cross-workspace dependency validation**
-- **Performance testing and monitoring**
-- **Data quality assertions**
+### Recommended Settings
+- Minimum number of required approvers
+- Optional requirement for linked work items
+
+### BPA Validation Setup
+
+**Azure DevOps:**
+1. Navigate to Branches
+2. Select Branch Policies  
+3. Under Build Validation:
+   - Add pipeline: PR – BPA Validation
+   - Trigger: Automatic
+   - Policy requirement: Required
+   - Expiration: 12 hours
+
+If BPA validation fails with severity 3 violations, the pull request will be blocked.
+
+**GitHub:**
+For GitHub, BPA validation is already configured using a `pull_request` trigger targeting `main`. The configuration is defined in `pr-validation.yaml`.
+
+**Note:** On some systems (especially Windows), cloning or working with this repository may fail due to long file paths. If you encounter path length issues, run the following command before cloning:
+```bash
+git config --global core.longpaths true
+```
 
 ## Advanced Features
 
@@ -225,6 +239,19 @@ FabricOps provides multiple deployment strategies:
 - **Performance monitoring**
 - **Error handling and recovery**
 - **Audit trails and compliance**
+
+## Additional Resources
+
+### Conference Materials and Presentations
+For related slide decks, presentations, and session materials on Microsoft Fabric, Power BI, Automation, CI/CD, and DevOps best practices, visit:
+
+**[Session Archive Repository](https://github.com/gronnerup/SessionArchive)**
+
+This repository contains presentation materials, demo scripts, and additional resources from various community conferences and events covering topics such as:
+- Microsoft Fabric automation strategies
+- CI/CD implementation patterns
+- DevOps best practices for data platforms
+- Modern ways-of-working for analytics teams
 
 ## Disclaimer
 
